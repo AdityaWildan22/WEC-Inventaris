@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Inv_Barang;
 use App\Http\Controllers\Inv_Kategori;
 use App\Http\Controllers\Inv_Dashboard;
+use App\Http\Controllers\Inv_Perbaikan;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,7 @@ Route::get('/kategori',[Inv_Kategori::class,'index']);
 Route::get('/kategori/form/{id?}',[Inv_Kategori::class,'form']);
 Route::post('/kategori/save',[Inv_Kategori::class,'save']);
 Route::get('/kategori/delete/{id}',[Inv_Kategori::class,'delete']);
+
+//Route Perbaikan
+Route::get('/perbaikan',[Inv_Perbaikan::class,'index']);
+Route::get('/perbaikan/form/{id?}',[Inv_Perbaikan::class,'form']);

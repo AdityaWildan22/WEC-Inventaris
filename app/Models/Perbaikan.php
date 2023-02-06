@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Perbaikan extends Model
 {
     use HasFactory;
+    protected $table = "inv_perbaikan";
+    protected $primaryKey = "id_perbaikan";
+    protected $keyType = "string";
+    public $incrementing = false;
+    protected $guarded = ['id_perbaikan']; 
 }
