@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('inv_perbaikan', function (Blueprint $table) {
             $table->increments('id_perbaikan');
-            $table->string('kode_barang');
+            $table->string('kd_barang');
             $table->string('tgl_perbaikan');
             $table->string('kerusakan');
             $table->string('solusi');
+            $table->string('status');
             $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@
         @endif
     });
  </script>
-<form action="{{ url('barang/save')}}" method="post">
+<form action="{{ url('perbaikan/save')}}" method="post">
     @csrf
     <div class="row mb-5">
         <div class="col-md-2">
@@ -22,8 +22,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="kd_barang">Kode Barang</label>
-                        <input type="hidden" name="id_barang" value="{{ @$dtBarang->id_barang}}">
-                        <input type="hidden" name="id_kat" value="{{ @$dtBarang->id_kat}}">
+                        <input type="hidden" name="id_perbaikan" value="{{ @$dtPerbaikan->id_perbaikan}}">
                         <input type="text" class="form-control  @error("kd_barang") is-invalid  @enderror" id="kd_barang" name="kd_barang" placeholder="Kode Barang" value="{{ old("kd_barang") ? old("kd_barang") : @$dtBarang->kd_barang }}">
                         @error("kd_barang")
                         <span id="error-kd_barang" class="error invalid-feedback">
@@ -32,56 +31,38 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="nm_barang">Nama Barang</label>
-                        <input type="text" class="form-control @error("nm_barang") is-invalid  @enderror" id="nm_barang" name="nm_barang" placeholder="Nama Barang" value="{{  old("nm_barang") ? old("nm_barang") :@$dtBarang->nm_barang }}">
-                        @error("nm_barang")
-                            <span id="error-nm_barang" class="error invalid-feedback">
-                                {{ $errors->first("nm_barang") }}
+                        <label for="tgl_perbaikan">Tanggal Perbaikan</label>
+                        <input type="text" class="form-control @error("tgl_perbaikan") is-invalid  @enderror" id="tgl_perbaikan" name="tgl_perbaikan" placeholder="Tanggal perbaikan" value="{{  old("tgl_perbaikan") ? old("tgl_perbaikan") :@$dtPerbaikan->tgl_perbaikan }}">
+                        @error("tgl_perbaikan")
+                            <span id="error-tgl_perbaikan" class="error invalid-feedback">
+                                {{ $errors->first("tgl_perbaikan") }}
                             </span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="tgl_pembelian">Tanggal Pembelian</label>
-                        <input type="text" class="form-control @error("tgl_pembelian") is-invalid  @enderror" id="tgl_pembelian" name="tgl_pembelian" placeholder="Tanggal Pembelian" value="{{  old("tgl_pembelian") ? old("tgl_pembelian") :@$dtBarang->tgl_pembelian }}">
-                        @error("tgl_pembelian")
-                            <span id="error-tgl_pembelian" class="error invalid-feedback">
-                                {{ $errors->first("tgl_pembelian") }}
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="harga">Harga</label>
-                        <input type="text" class="form-control  @error("harga") is-invalid  @enderror" id="harga" name="harga" placeholder="Harga" value="{{  old("harga") ? old("harga") : @$dtBarang->harga }}">
-                        @error("harga")
-                        <span id="error-harga" class="error invalid-feedback">
-                            {{ $errors->first("harga") }}
+                        <label for="kerusakan">Kerusakan</label>
+                        <input type="text" class="form-control  @error("kerusakan") is-invalid  @enderror" id="kerusakan" name="kerusakan" placeholder="Kerusakan" value="{{  old("kerusakan") ? old("kerusakan") : @$dtPerbaikan->kerusakan }}">
+                        @error("kerusakan")
+                        <span id="error-kerusakan" class="error invalid-feedback">
+                            {{ $errors->first("kerusakan") }}
                         </span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="tempat">Tempat</label>
-                        <input type="text" class="form-control  @error("tempat") is-invalid  @enderror" id="tempat" name="tempat" placeholder="Tempat" value="{{ old("tempat") ? old("tempat") : @$dtBarang->tempat }}">
-                        @error("tempat")
-                            <span id="error-tempat" class="error invalid-feedback">
-                                {{ $errors->first("tempat") }}
+                        <label for="solusi">Solusi</label>
+                        <input type="text" class="form-control  @error("solusi") is-invalid  @enderror" id="solusi" name="solusi" placeholder="Solusi" value="{{ old("solusi") ? old("solusi") : @$dtPerbaikan->solusi }}">
+                        @error("solusi")
+                            <span id="error-solusi" class="error invalid-feedback">
+                                {{ $errors->first("solusi") }}
                             </span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="ket">Keterangan</label>
-                        <textarea class="form-control  @error("ket") is-invalid  @enderror" id="ket" name="ket" placeholder="Keterangan">{{ old("ket") ? old("ket") : @$dtBarang->ket }}</textarea>
-                        @error("ket")
-                        <span id="error-ket" class="error invalid-feedback">
-                            {{ $errors->first("ket") }}
-                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="status">Status</label>
                         <select class="custom-select rounded-0  @error("status") is-invalid  @enderror" id="status" name="status">
                             <option value="" selected="true" disabled>- Pilih Status -</option>
-                            <option {{ @$dtBarang->status ==1 ?"selected" : "" }} value="1">Baik</option>
-                            <option {{ @$dtBarang->status ==2 ?"selected" : "" }} value="2">Rusak</option>
+                            <option {{ @$dtPerbaikan->status ==1 ?"selected" : "" }} value="1">Selesai</option>
+                            <option {{ @$dtPerbaikan->status ==2 ?"selected" : "" }} value="2">Pending</option>
                         </select>
                         @error("status")
                             <span id="error-status" class="error invalid-feedback">

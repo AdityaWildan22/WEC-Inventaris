@@ -35,3 +35,4 @@ Route::get('/kategori/delete/{id}',[Inv_Kategori::class,'delete']);
 //Route Perbaikan
 Route::get('/perbaikan',[Inv_Perbaikan::class,'index']);
 Route::get('/perbaikan/form/{id?}',[Inv_Perbaikan::class,'form']);
+Route::post('/perbaikan/save',[Inv_Perbaikan::class,'save']);
