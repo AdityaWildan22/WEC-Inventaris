@@ -5,6 +5,7 @@ use App\Http\Controllers\Inv_Barang;
 use App\Http\Controllers\Inv_Kategori;
 use App\Http\Controllers\Inv_Dashboard;
 use App\Http\Controllers\Inv_Perbaikan;
+use App\Http\Controllers\Inv_User;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,8 @@ Route::get('/kategori/delete/{id}',[Inv_Kategori::class,'delete']);
 Route::get('/perbaikan',[Inv_Perbaikan::class,'index']);
 Route::get('/perbaikan/form/{id?}',[Inv_Perbaikan::class,'form']);
 Route::post('/perbaikan/save',[Inv_Perbaikan::class,'save']);
+
+//Route User
+Route::get('/user',[Inv_User::class,'index']);
+Route::get('/user/form/{id?}',[Inv_User::class,'form']);
+Route::post('/user/save',[Inv_User::class,'save']);
