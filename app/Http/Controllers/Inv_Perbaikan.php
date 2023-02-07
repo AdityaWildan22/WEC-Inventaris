@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 use App\Models\Perbaikan;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class Inv_Perbaikan extends Controller
 {
     //function index/home
     function index(){
+        //join dengan tabel barang
+        $barang=DB::table("inv_perbaikan")
+        ->join("inv_barang", "inv_perbaikan.kd_barang","=","inv_barang.kd_barang")
+        ->select("inv_perbaikan.*","inv_barang.nm_barang")
+        ->get();
         $data=[
             "judul"=>"Data Perbaikan",
             "sub_judul"=>"Data Perbaikan",
-            "perbaikan"=>Perbaikan::All()
+            "perbaikan"=>$barang
         ];
         return view("perbaikan.data_perbaikan",$data);
     }
@@ -29,7 +35,7 @@ class Inv_Perbaikan extends Controller
 
     //function save data perbaikan
     function save(Request $req){
-        dd($req->all());
+        //dd($req->input('id_perbaikan'));
         //validasi
         $req->validate(
              //rule
@@ -67,6 +73,21 @@ class Inv_Perbaikan extends Controller
             //message success
             $mess=["type"=>"Data Perbaikan","text"=>"Berhasil Disimpan !!!","icon"=>"success","button"=>"OK"];
         }catch(Exception $err){
+            $mess=["type"=>"Data Perbaikan","text"=>"Gagal Disimpan !!!","icon"=>"error","button"=>"OK"];
+        }
+        //redirect
+        return redirect('perbaikan')->with($mess);
+    }
+
+    //function delete perbaikan
+    function delete(Request $req){
+        //proses delete
+        try{
+            Perbaikan::where("id_perbaikan",$req->id)->delete();
+            //message success
+            $mess=["type"=>"Data Perbaikan","text"=>"Berhasil Dihapus !!!","icon"=>"success","button"=>"OK"];
+        }catch(Exception $err){
+            //message error
             $mess=["type"=>"Data Perbaikan","text"=>"Gagal Disimpan !!!","icon"=>"error","button"=>"OK"];
         }
         //redirect

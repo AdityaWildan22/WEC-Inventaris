@@ -17,13 +17,13 @@
         <div class="col-md-2">
 
         </div>
-        <div class="dt_member col-md-8">
+        <div class="dt_perbaikan col-md-8">
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
                         <label for="kd_barang">Kode Barang</label>
                         <input type="hidden" name="id_perbaikan" value="{{ @$dtPerbaikan->id_perbaikan}}">
-                        <input type="text" class="form-control  @error("kd_barang") is-invalid  @enderror" id="kd_barang" name="kd_barang" placeholder="Kode Barang" value="{{ old("kd_barang") ? old("kd_barang") : @$dtBarang->kd_barang }}">
+                        <input type="text" class="form-control  @error("kd_barang") is-invalid  @enderror" id="kd_barang" name="kd_barang" placeholder="Kode Barang" value="{{ old("kd_barang") ? old("kd_barang") : @$dtPerbaikan->kd_barang }}">
                         @error("kd_barang")
                         <span id="error-kd_barang" class="error invalid-feedback">
                             {{ $errors->first("kd_barang") }}

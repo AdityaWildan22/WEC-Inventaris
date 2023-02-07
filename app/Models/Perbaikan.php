@@ -13,4 +13,5 @@ class Perbaikan extends Model
     protected $keyType = "string";
     public $incrementing = false;
     protected $guarded = ['id_perbaikan']; 
+    //protected $fillable = ['id_perbaikan','kd_barang','tgl_perbaikan','kerusakan','solusi','status'];
 }
