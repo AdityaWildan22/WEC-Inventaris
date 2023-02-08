@@ -55,10 +55,10 @@ class Inv_Kategori extends Controller
                 ]
             );
             //message success
-            $mess=["type"=>"Data Kategori","text"=>"Berhasil Disimpan !!!","icon"=>"success","button"=>"OK"];
+            $mess=["type"=>"Data Kategori {$req['kd_kat']}","text"=>"Berhasil Disimpan !!!","icon"=>"success","button"=>"OK"];
         }catch(Exception $err){
             //message error
-            $mess=["type"=>"Data Kategori","text"=>"Gagal Disimpan !!!","icon"=>"error","button"=>"OK"];
+            $mess=["type"=>"Data Kategori {$req['kd_kat']}","text"=>"Gagal Disimpan !!!","icon"=>"error","button"=>"OK"];
         }
         //redirect
         return redirect('kategori')->with($mess);
@@ -70,10 +70,10 @@ class Inv_Kategori extends Controller
         try{
             Kategori::where("id_kat",$req->id)->delete();
             //message success
-            $mess=["type"=>"Data Kategori","text"=>"Berhasil Dihapus !!!","icon"=>"success","button"=>"OK"];
+            $mess=["type"=>"Data Kategori {$req['kd_kat']}","text"=>"Berhasil Dihapus !!!","icon"=>"success","button"=>"OK"];
         }catch(Exception $err){
             //message error
-            $mess=["type"=>"Data Kategori","text"=>"Gagal Disimpan !!!","icon"=>"error","button"=>"OK"];
+            $mess=["type"=>"Data Kategori {$req['kd_kat']}","text"=>"Gagal Disimpan !!!","icon"=>"error","button"=>"OK"];
         }
         //redirect
         return redirect('kategori')->with($mess);
