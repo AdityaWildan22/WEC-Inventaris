@@ -43,15 +43,15 @@
                             <td>{{$item->tgl_pembelian}}</td>
                             <td>{{$item->tempat}}</td>
                             {{-- <td>{{$item->ket}}</td> --}}
-                            <td style="text-align: center">
+                            <td style="text-align: left">
                                 <?php
                                 if($item->status==1){
                                 ?>
-                                    <span class="badge bg-success" style="text-align: center;font-size:10px;color:#fff !important">BAIK</span>
+                                    <span class="badge bg-success" style="text-align: left;font-size:12px;color:#fff !important">BAIK</span>
                                 <?php } 
                                 else { 
                                 ?>
-                                    <span class="badge bg-danger" style="text-align: center;font-size:10px;color:#fff !important">RUSAK</span>
+                                    <span class="badge bg-danger" style="text-align: left;font-size:12px;color:#fff !important">RUSAK</span>
                                 <?php 
                                     }
                                 ?>
