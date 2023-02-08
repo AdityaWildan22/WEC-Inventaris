@@ -82,10 +82,10 @@ class Inv_Barang extends Controller
                 
             );
             //message success
-            $mess=["type"=>"Data Barang","text"=>"Berhasil Disimpan","icon"=>"success","button"=>"Oke"];
+            $mess=["type"=>"Data Barang {$req['kd_barang']}","text"=>"Berhasil Disimpan","icon"=>"success","button"=>"Oke"];
         }catch(Exception $err){
             //message error
-            $mess=["type"=>"Data Barang","text"=>"Gagal Disimpan","icon"=>"error","button"=>"Oke"];
+            $mess=["type"=>"Data Barang {$req['kd_barang']}","text"=>"Gagal Disimpan","icon"=>"error","button"=>"Oke"];
         }
        //redirect
        return redirect('barang')->with($mess);
@@ -97,10 +97,10 @@ class Inv_Barang extends Controller
         try{
             Barang::where("id_barang",$req->id)->delete();
             //message success
-            $mess=["type"=>"Data Barang","text"=>"Berhasil Dihapus !!!","icon"=>"success","button"=>"OK"];
+            $mess=["type"=>"Data Barang {$req['kd_barang']}","text"=>"Berhasil Dihapus !!!","icon"=>"success","button"=>"OK"];
         }catch(Exception $err){
             //message error
-            $mess=["type"=>"Data Barang","text"=>"Gagal Disimpan !!!","icon"=>"error","button"=>"OK"];
+            $mess=["type"=>"Data Barang {$req['kd_barang']}","text"=>"Gagal Disimpan !!!","icon"=>"error","button"=>"OK"];
         }
         //redirect
         return redirect('barang')->with($mess);
