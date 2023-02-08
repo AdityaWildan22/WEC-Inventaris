@@ -61,10 +61,10 @@ class Inv_User extends Controller
                 ]
             );
             //message if success
-            $mess=["type"=>"Data User","text"=>"Berhasil Disimpan !!!","icon"=>"success","button"=>"OK"];
+            $mess=["type"=>"Data User {$req['username']}","text"=>"Berhasil Disimpan !!!","icon"=>"success","button"=>"OK"];
         }catch(Exception $err){
             //message if error
-            $mess=["type"=>"Data User","text"=>"Gagal Disimpan !!!","icon"=>"error","button"=>"OK"];
+            $mess=["type"=>"Data User {$req['username']}","text"=>"Gagal Disimpan !!!","icon"=>"error","button"=>"OK"];
         }
 
         //redirect
@@ -77,10 +77,10 @@ class Inv_User extends Controller
         try{
             User::where("id",$req->id)->delete();
             //message success
-            $mess=["type"=>"Data User","text"=>"Berhasil Dihapus !!!","icon"=>"success","button"=>"OK"];
+            $mess=["type"=>"Data User {$req['username']}","text"=>"Berhasil Dihapus !!!","icon"=>"success","button"=>"OK"];
         }catch(Exception $err){
             //message error
-            $mess=["type"=>"Data User","text"=>"Gagal Dihapus !!!","icon"=>"error","button"=>"OK"];
+            $mess=["type"=>"Data User {$req['username']}","text"=>"Gagal Dihapus !!!","icon"=>"error","button"=>"OK"];
         }
 
         //redirect

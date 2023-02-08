@@ -37,8 +37,10 @@ Route::get('/kategori/delete/{id}',[Inv_Kategori::class,'delete']);
 Route::get('/perbaikan',[Inv_Perbaikan::class,'index']);
 Route::get('/perbaikan/form/{id?}',[Inv_Perbaikan::class,'form']);
 Route::post('/perbaikan/save',[Inv_Perbaikan::class,'save']);
+Route::get('/perbaikan/delete/{id}',[Inv_Perbaikan::class,'delete']);
 
 //Route User
 Route::get('/user',[Inv_User::class,'index']);
 Route::get('/user/form/{id?}',[Inv_User::class,'form']);
 Route::post('/user/save',[Inv_User::class,'save']);
+Route::get('/user/delete/{id}',[Inv_User::class,'delete']);

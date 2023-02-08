@@ -23,7 +23,7 @@
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="hidden" name="id" value="{{ @$dtUser->id}}">
-                        <input type="text" class="form-control  @error("username") is-invalid  @enderror" id="username" name="username" placeholder="Username" value="{{ old("username") ? old("username") : @$dtPerbaikan->username }}">
+                        <input type="text" class="form-control  @error("username") is-invalid  @enderror" id="username" name="username" placeholder="Username" value="{{ old("username") ? old("username") : @$dtUser->username }}">
                         @error("username")
                         <span id="error-username" class="error invalid-feedback">
                             {{ $errors->first("username") }}
@@ -32,13 +32,14 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control @error("password") is-invalid  @enderror" id="password" name="password" placeholder="Password" value="{{  old("password") ? old("password") :@$dtPerbaikan->password }}">
+                        <input type="hidden" name="old_password" value="{{ @$dtUser->password }}">
+                        <input type="password" class="form-control @error("password") is-invalid  @enderror" id="password" name="password" placeholder="Password" value="{{ old("password") }}">
                         @error("password")
-                            <span id="error-password" class="error invalid-feedback">
-                                {{ $errors->first("password") }}
-                            </span>
+                        <span id="error-password" class="error invalid-feedback">
+                            {{ $errors->first("password") }}
+                        </span>
                         @enderror
-                    </div>
+                    </div>       
                     <div class="form-group">
                         <label for="role">Role</label>
                         <select class="custom-select rounded-0  @error("role") is-invalid  @enderror" id="role" name="role">

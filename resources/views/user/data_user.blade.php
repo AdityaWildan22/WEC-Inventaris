@@ -25,7 +25,7 @@
                             <th>Username</th>
                             <th>Role</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            <th width="100px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,7 +33,19 @@
                             <tr>
                                 <td>{{$item["username"]}}</td>
                                 <td>{{$item["role"]}}</td>
-                                <td>{{$item["status"]}}</td>
+                                <td style="text-align: left">
+                                    <?php
+                                    if($item->status==1){
+                                    ?>
+                                        <span class="badge bg-success" style="text-align: left;font-size:12px;color:#fff !important">AKTIF</span>
+                                    <?php } 
+                                    else { 
+                                    ?>
+                                        <span class="badge bg-danger" style="text-align: left;font-size:12px;color:#fff !important">NON AKTIF</span>
+                                    <?php 
+                                        }
+                                    ?>
+                                </td>
                                 <td>
                                     <a href="{{ url('user/form/'.$item["id"]) }}" class="btn btn-warning btn-flat btn-sm"><i class="fa fa-edit"></i></a>
                                     <a href="{{ url('user/delete/'.$item["id"]) }}" class="btn btn-danger btn-flat btn-sm" onclick="return confirmDelete(this)"><i class="fa fa-trash"></i></a>
