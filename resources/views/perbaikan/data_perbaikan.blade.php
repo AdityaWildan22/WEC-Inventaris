@@ -40,15 +40,15 @@
                             <td>{{$item->tgl_perbaikan}}</td>
                             <td>{{$item->kerusakan}}</td>
                             <td>{{$item->solusi}}</td>
-                            <td style="text-align: center">
+                            <td style="text-align: left">
                                 <?php
                                 if($item->status==1){
                                 ?>
-                                    <span class="badge bg-success" style="text-align: center;font-size:10px;color:#fff !important">SELESAI</span>
+                                    <span class="badge bg-success" style="text-align: left;font-size:12px;color:#fff !important">SELESAI</span>
                                 <?php } 
                                 else { 
                                 ?>
-                                    <span class="badge bg-danger" style="text-align: center;font-size:10px;color:#fff !important">PENDING</span>
+                                    <span class="badge bg-danger" style="text-align: left;font-size:12px;color:#fff !important">PENDING</span>
                                 <?php 
                                     }
                                 ?>
