@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="text" class="form-control @error("password") is-invalid  @enderror" id="password" name="password" placeholder="Password" value="{{  old("password") ? old("password") :@$dtPerbaikan->password }}">
+                        <input type="password" class="form-control @error("password") is-invalid  @enderror" id="password" name="password" placeholder="Password" value="{{  old("password") ? old("password") :@$dtPerbaikan->password }}">
                         @error("password")
                             <span id="error-password" class="error invalid-feedback">
                                 {{ $errors->first("password") }}

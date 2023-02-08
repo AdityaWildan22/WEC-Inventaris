@@ -85,8 +85,8 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Data Pengguna</a>
-                <a class="collapse-item" href="#">Form Data Pengguna</a>
+                <a class="collapse-item" href="{{url('user')}}">Data Pengguna</a>
+                <a class="collapse-item" href="{{url('user/form')}}">Form Data Pengguna</a>
             </div>
         </div>
     </li>
