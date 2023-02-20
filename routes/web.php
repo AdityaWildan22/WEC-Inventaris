@@ -44,3 +44,6 @@ Route::get('/user',[Inv_User::class,'index']);
 Route::get('/user/form/{id?}',[Inv_User::class,'form']);
 Route::post('/user/save',[Inv_User::class,'save']);
 Route::get('/user/delete/{id}',[Inv_User::class,'delete']);
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('/');
