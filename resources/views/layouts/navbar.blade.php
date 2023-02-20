@@ -18,7 +18,7 @@
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small" style="text-transform: uppercase; font-weight: 600; padding: 0; text-decoration: none !important">Aditya</span>
             </a> --}}
             <p class="dt" style="color : white;margin-bottom: 0;
-            text-align: center; padding-right: 5px; text-transform:uppercase; font-size:14px">Aditya</p>
+            text-align: center; padding-right: 5px; text-transform:uppercase; font-size:14px; margin-top: 8px">Aditya</p>
         <hr style="margin-top:0; margin-bottom:0;" color="white">
             {{-- <a class="nav-item mb-2" href="#" data-toggle="modal" data-target="#logoutModal"  style= "color: white; padding: 0; text-decoration: none !important">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-1 text-gray-400"></i>
