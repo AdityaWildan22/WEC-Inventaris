@@ -295,8 +295,16 @@
                 </div>
                 <div class="modal-body">Pilih Tombol Keluar di Pojok Kanan Bawah</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary text-left" type="button" data-dismiss="modal">Batal</button>
-                    <a class="btn btn-primary" href="#">Keluar</a>
+                    <a class="btn btn-secondary" data-dismiss="modal" style="display: flex; text-align:left">Batal</a>
+                    <a class="btn btn-primary" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                        Keluar
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </div>
         </div>

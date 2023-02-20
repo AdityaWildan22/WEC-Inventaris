@@ -6,6 +6,7 @@ use App\Http\Controllers\Inv_Kategori;
 use App\Http\Controllers\Inv_Dashboard;
 use App\Http\Controllers\Inv_Perbaikan;
 use App\Http\Controllers\Inv_User;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,4 +47,4 @@ Route::post('/user/save',[Inv_User::class,'save']);
 Route::get('/user/delete/{id}',[Inv_User::class,'delete']);
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('/');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

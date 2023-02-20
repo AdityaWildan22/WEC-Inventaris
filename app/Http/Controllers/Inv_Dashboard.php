@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class Inv_Dashboard extends Controller
 {
-    //
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
     function index(){
         $data = [
             "judul"=>"Dashboard",
