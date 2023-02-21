@@ -13,6 +13,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
+
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
 </head>

@@ -295,7 +295,7 @@
                 </div>
                 <div class="modal-body">Pilih Tombol Keluar di Pojok Kanan Bawah</div>
                 <div class="modal-footer">
-                    <a class="btn btn-secondary" data-dismiss="modal" style="display: flex; text-align:left">Batal</a>
+                    <a class="btn btn-secondary" data-dismiss="modal" style="margin-right: 325px">Batal</a>
                     <a class="btn btn-primary" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">

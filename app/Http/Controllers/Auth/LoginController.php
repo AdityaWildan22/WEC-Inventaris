@@ -44,7 +44,7 @@ class LoginController extends Controller
         $this->validate($request, [
             'username' => 'required|string', //VALIDASI KOLOM USERNAME
             //TAPI KOLOM INI BISA BERISI EMAIL ATAU USERNAME
-            'password' => 'required|string|min:6',
+            'password' => 'required|string',
         ]);
     
         //TAMPUNG INFORMASI LOGINNYA, DIMANA KOLOM TYPE PERTAMA BERSIFAT DINAMIS BERDASARKAN VALUE DARI PENGECEKAN DIATAS
@@ -57,9 +57,11 @@ class LoginController extends Controller
         if (auth()->attempt($login)) {
             //JIKA BERHASIL, MAKA REDIRECT KE HALAMAN HOME
             return redirect('/');
+        }else{
+            //JIKA SALAH, MAKA KEMBALI KE LOGIN DAN TAMPILKAN NOTIFIKASI 
+            $message=["type"=>"Gagal Login","text"=>"Email atau Password Salah","icon"=>"error","button"=>"OK"];
         }
-        //JIKA SALAH, MAKA KEMBALI KE LOGIN DAN TAMPILKAN NOTIFIKASI 
-        return redirect()->route('login')->with(['error' => 'Email/Password salah!']);
+        return redirect()->route('login')->with($message);
     }
 
     public function logout()
