@@ -11,9 +11,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
+            {{-- <h3 style="margin-bottom: 0; padding-bottom:0">WEC INVENTARIS V1</h3> --}}
+            <div class="card" style="margin-top: 200px; padding-top:5px">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
