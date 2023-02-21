@@ -9,8 +9,8 @@ class Inv_Kategori extends Controller
     // function index/home kategori
     function index(){
         $data = [
-            "judul"=>"Data Kategori",
-            "sub_judul"=>"Data Kategori",
+            "judul"=>"DATA KATEGORI",
+            "sub_judul"=>"DATA KATEGORI",
             "kategori"=>Kategori::All()
         ];
         return view("kategori.data_kategori",$data);
@@ -18,10 +18,10 @@ class Inv_Kategori extends Controller
 
     // function form kategori
     function form(Request $req){
-        $mode = $req->id!= "" ? "Edit" : "Tambah";
+        $mode = $req->id!= "" ? "EDIT" : "TAMBAH";
         $data = [
-            "judul"=>$mode." Kategori",
-            "sub_judul"=>$mode." Kategori",
+            "judul"=>$mode." KATEGORI",
+            "sub_judul"=>$mode." KATEGORI",
             "dtKategori"=>Kategori::where("id_kat",$req->id)->first() 
         ];
         return view("kategori.form_kategori",$data);

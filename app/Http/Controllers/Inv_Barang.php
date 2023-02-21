@@ -15,8 +15,8 @@ class Inv_Barang extends Controller
         ->select("inv_barang.*","inv_kategori.nm_kat")
         ->get();
         $data=[
-            "judul"=>"Data Barang",
-            "sub_judul"=>"Data Barang",
+            "judul"=>"DATA BARANG",
+            "sub_judul"=>"DATA BARANG",
             // "barang"=>Barang::All()
             "barang"=>$barang
         ]; 
@@ -29,10 +29,10 @@ class Inv_Barang extends Controller
         ->join("inv_kategori","inv_barang.id_kat","=","inv_kategori.id_kat")
         ->select("inv_barang.*","inv_kategori.nm_kat")
         ->get();
-        $mode = $req->id!= "" ? "Edit" : "Tambah";
+        $mode = $req->id!= "" ? "EDIT" : "TAMBAH";
         $data=[
-            "judul"=>$mode." Barang",
-            "sub_judul"=>$mode." Barang",
+            "judul"=>$mode." BARANG",
+            "sub_judul"=>$mode." BARANG",
             "dtBarang"=>$barang->where("id_barang",$req->id)->first(),
             "kategori"=>Kategori::All()
         ];

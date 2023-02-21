@@ -30,7 +30,7 @@
                     <script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">@yield('sub_judul')</h1>
+                        <h1 class="h5 mb-0 text-gray-800">@yield('sub_judul')</h1>
                     </div>
                     @yield('content')
                 </div>

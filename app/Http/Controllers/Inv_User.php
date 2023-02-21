@@ -10,8 +10,8 @@ class Inv_User extends Controller
     //function index/home
     function index(){
         $data=[
-            "judul"=>"Data User",
-            "sub_judul"=>"Data User",
+            "judul"=>"DATA USER",
+            "sub_judul"=>"DATA USER",
             "user"=>User::All()
         ];
         return view("user.data_user",$data);
@@ -19,10 +19,10 @@ class Inv_User extends Controller
 
     //function form
     function form(Request $req){
-        $mode=$req->id!= "" ? "Edit" : "Tambah";
+        $mode=$req->id!= "" ? "EDIT" : "TAMBAH";
         $data=[
-            "judul"=>$mode." User",
-            "sub_judul"=>$mode." User",
+            "judul"=>$mode." USER",
+            "sub_judul"=>$mode." USER",
             "dtUser"=>User::where("id",$req->id)->first()
         ];
         return view("user.form_user",$data);

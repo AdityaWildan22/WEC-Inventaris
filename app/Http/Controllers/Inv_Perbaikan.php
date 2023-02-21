@@ -15,8 +15,8 @@ class Inv_Perbaikan extends Controller
         ->select("inv_perbaikan.*","inv_barang.nm_barang")
         ->get();
         $data=[
-            "judul"=>"Data Perbaikan",
-            "sub_judul"=>"Data Perbaikan",
+            "judul"=>"DATA PERBAIKAN",
+            "sub_judul"=>"DATA PERBAIKAN",
             "perbaikan"=>$barang
         ];
         return view("perbaikan.data_perbaikan",$data);
@@ -24,10 +24,10 @@ class Inv_Perbaikan extends Controller
 
     //function form data perbaikan
     function form(Request $req){
-        $mode = $req->id!= "" ? "Edit" : "Tambah";
+        $mode = $req->id!= "" ? "EDIT" : "TAMBAH";
         $data = [
-            "judul"=>$mode." Perbaikan",
-            "sub_judul"=>$mode." Perbaikan",
+            "judul"=>$mode." PERBAIKAN",
+            "sub_judul"=>$mode." PERBAIKAN",
             "dtPerbaikan"=>Perbaikan::where("id_perbaikan",$req->id)->first()
         ];
         return view("perbaikan.form_perbaikan",$data);

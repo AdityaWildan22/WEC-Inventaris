@@ -3,24 +3,34 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Anda ingin keluar ?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body text-right">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                <a class="btn btn-primary" href="login.html">Keluar</a>
-            </div>
-        </div>
-    </div>
+ <!-- Logout Modal-->
+ <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog" role="document">
+     <div class="modal-content">
+         <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Anda Ingin Keluar?</h5>
+             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">×</span>
+             </button>
+         </div>
+         <div class="modal-body">Pilih Tombol Keluar di Pojok Kanan Bawah</div>
+         <div class="modal-footer">
+             <a class="btn btn-secondary" data-dismiss="modal" style="margin-right: 325px">Batal</a>
+             <a class="btn btn-primary" href="{{ route('logout') }}"
+                 onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+                 Keluar
+             </a>
+
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                 @csrf
+             </form>
+         </div>
+     </div>
+ </div>
 </div>
+
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/jquery/jquery.min.js')}}" type="text/javascript"></script>

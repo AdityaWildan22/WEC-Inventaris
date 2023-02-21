@@ -14,7 +14,7 @@ class Inv_Dashboard extends Controller
     function index(){
         $data = [
             "judul"=>"DASHBOARD",
-            "sub_judul"=>"Dashboard"
+            "sub_judul"=>"DASHBOARD"
         ];
         return view("dashboard",$data);
     }
