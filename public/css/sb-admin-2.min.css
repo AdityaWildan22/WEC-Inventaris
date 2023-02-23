@@ -74,7 +74,7 @@ body {
     line-height: 1.5;
     color: #858796;
     text-align: left;
-    background-color: #fff
+    background-color: #057eb3
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -12102,10 +12102,12 @@ a:focus {
 }
 
 .bg-login-image {
-    background: url(https://source.unsplash.com/K4mSJ7kc0As/600x800);
-    background-position: center;
-    background-size: cover
+    background-image: url(../images/login.png);
+    background-position: right;
+    background-size: 80%;
+    background-repeat: no-repeat;
 }
+
 
 .bg-register-image {
     background: url(https://source.unsplash.com/Mv9hjnEUHR4/600x800);

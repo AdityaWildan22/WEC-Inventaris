@@ -55,7 +55,7 @@ class LoginController extends Controller
     
         //LAKUKAN LOGIN
         if (auth()->attempt($login)) {
-            //JIKA BERHASIL, MAKA REDIRECT KE HALAMAN HOME
+            //JIKA BERHASIL, MAKA REDIRECT KE HALAMAN DASHBOARD
             return redirect('/');
         }else{
             //JIKA SALAH, MAKA KEMBALI KE LOGIN DAN TAMPILKAN NOTIFIKASI 
